@@ -4,14 +4,14 @@
 
 using namespace std;
 
-vector<string> tokenize(const string &sstring)
+vector<string> tokenize(const string &sstring, char delimiter)
 {
 	size_t pos, startAt;
 	pos = startAt = 0;
 
 	vector<string> vstrings;
 	string item;
-	while ((pos = sstring.find('|', startAt)) != string::npos)
+	while ((pos = sstring.find(delimiter, startAt)) != string::npos)
     {
     	item = sstring.substr(startAt, pos-startAt);
     	#ifdef DEBUGAPP
